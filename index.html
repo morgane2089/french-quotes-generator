@@ -10,13 +10,19 @@
     <title>AI French Quotes Generator</title>
 </head>
 <body>
+
 <div class="container">
     <header>
+
 <h1>AI French Quotes Generator</h1>
+
 </header>
+
 <main>
+    <div class="form-container">
+
     <form id="quote-generator">
-<input  type="text" 
+        <input  type="text" 
         placeholder="Enter the topic of the french quote" 
         autofocus 
         required 
@@ -26,9 +32,10 @@
 
 <input type="submit" class="submit-button"/>
 </form>
-<div class="quote" id="quote">
- 
+<div class="hint">i.e Flower, Paris, Cheese</div>
+
 </div>
+<div class="quote hidden"  id="quote"> </div>
    
 </main>
 
@@ -37,4 +44,5 @@
 </div>
 <script src="src/index.js"> </script>
 </body>
+
 </html>
