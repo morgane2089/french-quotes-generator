@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="src/style.css">
+<script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <title>AI French Quotes Generator</title>
 </head>
 <body>
@@ -13,7 +14,7 @@
 <h1>AI French Quotes Generator</h1>
 </header>
 <main>
-    <form>
+    <form id="quote-generator">
 <input  type="text" 
         placeholder="Enter the topic of the french quote" 
         autofocus 
@@ -23,7 +24,7 @@
 
 <input type="submit" class="submit-button"/>
 </form>
-<div class="quote">
+<div class="quote" id="quote">
     The quote will go here
     <br/>
     The quote will go here
