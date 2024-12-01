@@ -1,9 +1,11 @@
 function displayQuote(response) {
-    // Remove 'html' prefix, quotes, and clean up the response
+    // More aggressive cleaning of the response
     let quote = response.data.answer
-        .replace(/^("|'|html\s*)/g, '')  // Remove leading html, quotes
-        .replace(/"$/, '')               // Remove trailing quote
-        .trim();                         // Remove any extra whitespace
+        .replace(/^(html\s*"|"|')/g, '')  // Remove leading html, quotes
+        .replace(/"*\*\*SheCodes AI\*\*.*$/g, '')  // Remove SheCodes AI signature
+        .replace(/"+$/g, '')  // Remove trailing quotes
+        .replace(/\s+/g, ' ')  // Replace multiple whitespaces with single space
+        .trim();  // Remove any extra whitespace
     
     new Typewriter('#quote', {
         strings: quote,
