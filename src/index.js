@@ -1,6 +1,9 @@
 function displayQuote(response) {
-    // Remove 'html' prefix if it exists
-    let quote = response.data.answer.replace(/^html\s*/, '');
+    // Remove 'html' prefix, quotes, and clean up the response
+    let quote = response.data.answer
+        .replace(/^("|'|html\s*)/g, '')  // Remove leading html, quotes
+        .replace(/"$/, '')               // Remove trailing quote
+        .trim();                         // Remove any extra whitespace
     
     new Typewriter('#quote', {
         strings: quote,
