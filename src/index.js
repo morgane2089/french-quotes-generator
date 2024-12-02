@@ -9,7 +9,7 @@ function displayQuote(response) {
         .map(line => line.trim()) 
         .filter(line => line.length > 0) 
         .join('<br/>'); 
-
+        
     new Typewriter('#quote', {
         strings: cleanedQuote,
         autoStart: true,
@@ -30,7 +30,7 @@ function generateQuote(event) {
     let quoteElement = document.querySelector("#quote");
     quoteElement.classList.remove("hidden");
     quoteElement.classList.add("generating");
-    quoteElement.innerHTML = ``<div class="generating">⏳ Generating a French quote about ${InstructionInput.value} </div>`;
+    quoteElement.innerHTML = `<div class="generating">⏳ Generating a French quote about ${InstructionInput.value}</div>`;
 
     axios.get(apiUrl).then(displayQuote);
 }
