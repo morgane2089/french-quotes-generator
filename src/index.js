@@ -22,7 +22,7 @@ function generateQuote(event) {
     event.preventDefault();
     let InstructionInput = document.querySelector("#user-instruction");
     let apiKey = "c91ee5a03a4otdbb84f98dbdea4d441a";
-    let context = "You are an AI assistant expert on french quote. Your mission is to generate a 4 line quote. Separate each line with two quotes. Do not add any extra formatting. Sign the quote with — SheCodes AI at the end.";
+    let context = "You are an AI assistant expert on french quote. Your mission is to generate a 4 line quote. Separate each line with two quotes. Do not add any extra formatting and i don't want any markdown on the response. Sign the quote with — SheCodes AI at the end.";
     let prompt = `Generate a french quote about ${InstructionInput.value}`;
     
     let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${encodeURIComponent(prompt)}&context=${encodeURIComponent(context)}&key=${apiKey}`;
