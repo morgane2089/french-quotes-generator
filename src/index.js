@@ -1,15 +1,15 @@
 function displayQuote(response) {
-    // Even more comprehensive cleaning of the response
+   
     let cleanedQuote = response.data.answer
-        // Remove leading 'html', quotes, and any signature
-        .replace(/^(html\s*)?"/g, '')  // Remove initial 'html' and quote
-        .replace(/"\*\*—?\s*SheCodes AI\*\*.*$/g, '')  // Remove SheCodes AI signature
-        .replace(/"+$/g, '')  // Remove trailing quotes
-        .split('""')  // Split multiple quotes
-        .map(line => line.trim())  // Trim each line
-        .filter(line => line.length > 0)  // Remove empty lines
-        .join('<br/>');  // Join with line breaks
-    
+        
+        .replace(/^(html\s*)?"/g, '')  
+        .replace(/"\*\*—?\s*SheCodes AI\*\*.*$/g, '')  
+        .replace(/"+$/g, '') 
+        .split('""')  
+        .map(line => line.trim()) 
+        .filter(line => line.length > 0) 
+        .join('<br/>'); 
+
     new Typewriter('#quote', {
         strings: cleanedQuote,
         autoStart: true,
@@ -30,7 +30,7 @@ function generateQuote(event) {
     let quoteElement = document.querySelector("#quote");
     quoteElement.classList.remove("hidden");
     quoteElement.classList.add("generating");
-    quoteElement.innerHTML = `⏳ Generating a French quote about ${InstructionInput.value}`;
+    quoteElement.innerHTML = ``<div class="generating">⏳ Generating a French quote about ${InstructionInput.value} </div>`;
 
     axios.get(apiUrl).then(displayQuote);
 }
